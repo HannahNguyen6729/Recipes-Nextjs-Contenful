@@ -34,6 +34,14 @@ export async function getStaticProps(context) {
   });
 
   console.log("recipe", recipe.items[0]);
+  if (!recipe.items.length) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
 
   return {
     // Passed to the page component as props
