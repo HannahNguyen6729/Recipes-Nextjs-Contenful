@@ -8,6 +8,15 @@ export default function Recipes({ recipes }) {
       {recipes.map((recipe) => {
         return <RecipeCard key={recipe.sys.id} recipe={recipe} />;
       })}
+
+      <style jsx>
+        {`
+      .recipe-list {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-gap: 2rem;
+      `}
+      </style>
     </div>
   );
 }
