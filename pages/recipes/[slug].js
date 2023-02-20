@@ -37,7 +37,10 @@ export async function getStaticProps(context) {
 
   return {
     // Passed to the page component as props
-    props: { recipe: recipe.items[0] },
+    props: {
+      recipe: recipe.items[0],
+      revalidate: 5,
+    },
   };
 }
 
